@@ -25,9 +25,10 @@ module Ruboty
               end
             end
           end
-          message.reply 'cleaned'
+          message.reply 'cleaned'.dup
         rescue => e
           message.reply e.message
+          message.reply e.backtrace.join("\n")
         end
 
         private
