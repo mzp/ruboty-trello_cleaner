@@ -21,6 +21,7 @@ module Ruboty
               list.cards.each do |card|
                 if (Time.now - card.created_at) > delay * 3_600
                   card.move_to_list(done_list)
+                  card.update_fields(pos: 'top')
                 end
               end
             end
