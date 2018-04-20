@@ -1,0 +1,13 @@
+version: "2"
+services:
+  app: &app
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.app
+    hostname: app
+    volumes:
+      - .:/work
+      - bundle-data:/usr/local/bundle/
+volumes:
+  bundle-data:
+    driver: local
