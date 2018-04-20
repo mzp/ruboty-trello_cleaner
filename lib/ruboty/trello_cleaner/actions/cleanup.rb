@@ -25,6 +25,7 @@ module Ruboty
               end
             end
           end
+          message.reply 'cleaned'
         rescue => e
           message.reply e.message
         end
