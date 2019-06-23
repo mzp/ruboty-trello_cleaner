@@ -1,8 +1,6 @@
 # Ruboty::TrelloCleaner
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruboty/trello_cleaner`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A [Ruboty](https://github.com/r7kamura/ruboty) plugin to clean [Trello](http://trello.com) cards.
 
 ## Installation
 
@@ -22,22 +20,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+ruboty cleanup <BOARD_ID> <DELAY_IN_HOURS> <DONE_LIST_NAME> <TARGET_LIST_NAME1> <TARGET_LIST_NAME2> ...
+```
 
-## Development
+* `BOARD_ID`: Trello board ID. You can get id from board URL.
+* `DELAY_IN_HOURS`: If you set `3` for example, the cards created 3 hours ago will be moved.
+* `DONE_LIST_NAME`: For example "Done". Cleaned card will be moved to this list.
+* `TARGET_LIST_NAMEx`: For example "Agenda". Target list names.
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Configuration
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+You need to set these environment variables:
 
-## Contributing
+* `TRELLO_DEVELOPER_PUBLIC_KEY`: Trello Developer API key. You can obtain from https://trello.com/1/appKey/generate
+* `TRELLO_MEMBER_TOKEN`: Trello member token. You can obtain from https://trello.com/1/connect?key=DEVELOPER_PUBLIC_KEY&name=ruboty&response_type=token&scope=read,write&expiration=never
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruboty-trello_cleaner. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+## Author
+
+@mzp
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
-
-Everyone interacting in the Ruboty::TrelloCleaner project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ruboty-trello_cleaner/blob/master/CODE_OF_CONDUCT.md).
