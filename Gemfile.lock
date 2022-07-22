@@ -56,7 +56,7 @@ GEM
       rest-client (>= 1.8.0)
     slop (4.6.2)
     thread_safe (0.3.6)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     unf (0.1.4)
       unf_ext
